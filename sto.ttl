@@ -36,6 +36,29 @@ rami:hasRAMILifeCycleLayer
 rami:hasAdminShellSubmodel
       rdf:type owl:AnnotationProperty .
 
+	  
+rami:Enterprise , rami:ControlDevice , rami:FieldDevice , rami:Product , rami:WorkCenter , rami:Station,rami:Connected World
+	rdfs:subClassOf rami:RAMIHierarchyLevel.	  
+	
+rami:Integeration , rami:Communication , rami:Information , rami:Functional , rami:Business
+	rdfs:subClassOf rami:RAMILifeCycleLayer.	
+	
+rami:RAMILifeCycleLayer  a owl:Class.
+
+rami:ramiModel4.0 owl:equivalentClass [
+	owl:unionOf (  rami:RAMILifeCycleLayer,rami:RAMIHierarchyLevel)].
+
+
+rami:hasRAMIHierarchyLevel a owl:ObjectProperty;
+	rdfs:domain  sto:Standard ;
+	rdfs:range   rami:RAMIHierarchyLevel.
+
+rami:hasRAMILifeCycleLayer a owl:ObjectProperty;
+	rdfs:domain  sto:Standard ;
+	rdfs:range   rami:RAMILifeCycleLayer.
+
+	
+	
 sto:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the relation between industry standards, and related concepts" ;
       dc11:title "Standards Vocabulary"@en ;
